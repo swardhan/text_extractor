@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Extractor</title>
+</head>
+
+<body>
+<header class="navbar">
+  <h3>{{ name }}</h3>
+  <form action="http://localhost:5000/image/" method="post" enctype="multipart/form-data" >
+      <span>
+        Browse <input type="file" name="image">
+      </span>
+
+    <input type="submit" value="Upload your image" class="btn btn-primary">
+  </form>
+</header>
+
+</body>
+</html>
