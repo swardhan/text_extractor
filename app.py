@@ -9,15 +9,20 @@ api = Api(app)
 UPLOAD_FOLDER = os.path.basename('uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+@app.route('/uploadform')
+def form():
+    return render_template('form.html')
+
 class ImageUpload(Resource):
     def post(self):
+        print(request.is_json)
         data = request.get_json()
         image_data = data['image']
         # Saving Image to Database
         fh = open("imageToSave.png", "wb")
         fh.write(image_data.decode('base64'))
         fh.close()
-        return {"message": "Imaga Uploaded"}
+        return render("Image Uploaded")
 
 
 
